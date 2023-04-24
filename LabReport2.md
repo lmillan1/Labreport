@@ -64,5 +64,68 @@ message is hello before the request and its value changes to How are you after t
 
 # Part 2
 
+## ArrayTests
 
-# Part 3 
+This is a JUnit test class for the `ArrayExamples` class, which contains a method called `reverseInPlace` that attempts to reverse the order of elements in an integer array in place.
+
+### testReverseInPlace
+
+The first test method test the `reverseInPlace` method with failure-inducing input for the buggy program
+
+The second test method test the `reveseInPlace` method that doesn't induce a failure.
+
+####
+
+```java
+int[] arr = {1, 2, 3, 4, 5};
+ArrayExamples.reverseInPlace(arr);
+assertArrayEquals(new int[]{5, 4, 3, 2, 1}, arr);
+
+int[] input1 = { 3 };
+ArrayExamples.reverseInPlace(input1);
+assertArrayEquals(new int[]{ 3 }, input1);
+
+```
+
+## Sympton as the output of running the test(screenshot)
+<img width="1512" alt="Screen Shot 2023-04-24 at 4 42 08 PM" src="https://user-images.githubusercontent.com/130090548/234138584-4937557b-602d-4fc0-b2b4-9eadf99ae154.png">
+
+<img width="1512" alt="Screen Shot 2023-04-24 at 4 42 13 PM" src="https://user-images.githubusercontent.com/130090548/234138588-20b24f20-43d5-4d03-8167-2a931075ccce.png">
+
+
+As you can see with the screenshot the it doesnt reverse the array the input is 1,2,3,4,5 and the correct output should be 5, 4,3, 2,1 , but the original code returns 2 not 4.
+Bug is that it doesn't actually reverse the array, but replaces each of the elements. To fix it you can use a two pointer to place the two points the start and end and swap the start and end while incrementing both the start and end with 1.
+
+### The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)
+#### Before:
+
+```java
+
+ static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+
+```
+
+#### After:
+
+```java
+static void reverseInPlace(int[] arr) {
+  int left = 0;
+  int right = arr.length - 1;
+  while (left &lt; right) {
+    int temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+    left += 1;
+    right -= 1;
+  }
+}
+```
+Fixed code uses two indices left and right to initialize the first and last element of the array. It then sawps the values of left and right while incrementing left and decrementing the right until they meet at the middle.
+
+# Part 3
+
+Things that I learned in week2 for lab was creating a webserver and how to create supports for the path and behavior. Another thing that I learned in week3 was how to look for bugs and create test cases to find the bugs and check the behavior of it.
