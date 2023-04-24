@@ -33,12 +33,16 @@ Screenshot of using /add-message?s=How are you:
 For each of the two screenshots, describe:
 
 Which methods in your code are called?
+
+
 Screenshot using hello:
 
 
 Screenshot using How are you:
 
 What are the relevant arguments to those methods, and the values of any relevant fields of the class?
+
+
 Screenshot using hello:
 
 
@@ -46,6 +50,8 @@ Screenshot using How are you:
 
 How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
 By values, we mean specific Strings, ints, URIs, and so on. "abc" is a value, 456 is a value, new URI("http://...") is a value, and so on.)
+
+
 Screenshot using hello:
 
 
