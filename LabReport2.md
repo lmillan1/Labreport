@@ -30,8 +30,6 @@ Screenshot of using /add-message?s=How are you:
 
 
 
-
-
 For each of the two screenshots, describe:
 
 Which methods in your code are called?
