@@ -36,27 +36,33 @@ Which methods in your code are called?
 
 
 Screenshot using hello:
-
+It calls the method handleRequest()
 
 Screenshot using How are you:
+
+It calles the mthod handleRequest()
 
 What are the relevant arguments to those methods, and the values of any relevant fields of the class?
 
 
 Screenshot using hello:
-
+URI object representing the incoming request. In this case, the URI path is /add-message and the query string is s=Hello
 
 Screenshot using How are you:
+UrI object reperesenting the incoming request. In this case, the URI path is /add-message and the query string is s= How are you.
 
 How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
 By values, we mean specific Strings, ints, URIs, and so on. "abc" is a value, 456 is a value, new URI("http://...") is a value, and so on.)
 
 
 Screenshot using hello:
-
+Message is an emptry string before the request and its value changes to hello after the request
 
 Screenshot using How are you:
+message is hello before the request and its value changes to How are you after the request.
 
 
+# Part 2
 
 
+# Part 3 
